@@ -1,4 +1,4 @@
-$(call inherit-product, device/samsung/d2spr/full_d2vzw.mk)
+$(call inherit-product, device/samsung/d2vzw/full_d2vzw.mk)
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/cdma.mk)
