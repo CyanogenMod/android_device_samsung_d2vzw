@@ -1,0 +1,106 @@
+# system.prop for SCH-I535
+#
+
+rild.libpath=/system/lib/libril-qc-qmi-1.so
+rild.libargs=-d /dev/smd0
+persist.rild.nitz_plmn=
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
+ril.subscription.types=NV,RUIM
+
+dev.pm.dyn_samplingrate=1
+
+#system props for the MM modules
+media.stagefright.enable-player=true
+media.stagefright.enable-http=true
+media.stagefright.enable-fma2dp=false
+media.stagefright.enable-aac=true
+media.stagefright.enable-qcp=true
+
+lpa.decode=false
+lpa.use-stagefright=false
+
+#
+# system props for the data modules
+#
+ro.use_data_netmgrd=true
+persist.data_netmgrd_nint=16
+
+#
+# system props for SD card emulation of emmc partition
+#
+ro.emmc.sdcard.partition=17
+
+#system props for time-services
+persist.timed.enable=true
+
+# System props for audio
+persist.audio.fluence.mode=endfire
+persist.audio.vr.enable=false
+persist.audio.handset.mic=digital
+persist.audio.speaker.location=high
+
+#
+# system prop for opengles version
+#
+# 131072 is decimal for 0x20000 to report version 2
+ro.opengles.version=131072
+
+#
+# System prop for sending transmit power request to RIL during WiFi hotspot on/off
+#
+ro.ril.transmitpower=true
+
+#
+# Needed to match behavior of stock rom
+#      D/PHONE: mDoesRilSendMultipleCallRing=false
+#
+ro.telephony.call_ring.multiple=0
+
+ro.sf.lcd_density=320
+
+#system prop for switching gps driver to qmi
+persist.gps.qmienabled=true
+
+
+# Fields for custom RIL
+# MAX PROP NAME is 31 chars --|
+ro.telephony.ril_class=SamsungCDMAQualcommRIL
+ro.cdma.home.operator.numeric=310004
+ro.cdma.home.operator.alpha=Verizon
+gsm.sim.operator.alpha = Verizon
+gsm.sim.operator.numeric = 310004
+gsm.sim.operator.iso-country = us
+gsm.operator.alpha = Verizon
+gsm.operator.numeric = 310004
+gsm.operator.iso-country = us
+ro.telephony.default_network=4
+keyguard.no_require_sim=true
+DEVICE_PROVISIONED=1
+telephony.lteOnCdmaDevice=1
+
+
+# System property for SIM
+persist.radio.apm_sim_not_pwdn=1
+
+# System property for sys info indication
+persist.radio.add_power_save=1
+
+# System propverty snapshot disable
+persist.radio.snapshot_disabled=1
+
+# qcom display options
+debug.enabletr=true
+com.qc.hardware=true
+ro.sf.compbypass.enable=1
+com.qc.hdmi_out=true
+ro.hdmi.enable=true
+debug.sf.hw=1
+debug.composition.type=dyn
+ro.cwm.enable_key_repeat=true
