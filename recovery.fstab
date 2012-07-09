@@ -1,4 +1,4 @@
-/boot       emmc        /dev/block/mmcblk0p7
+/boot       emmc        /emmc/boot.img
 /system     ext4        /dev/block/mmcblk0p14
 /data       ext4        /dev/block/mmcblk0p15 length=-16384
 /cache      ext4        /dev/block/mmcblk0p17
