@@ -6,6 +6,10 @@
   {
     "repository": "android_device_samsung_d2-common",
     "target_path": "device/samsung/d2-common"
+  },
+  {
+    "repository": "android_kernel_samsung_d2vzw",
+    "target_path": "kernel/samsung/d2vzw"
   }
 ]
 

@@ -25,6 +25,11 @@
 PRODUCT_PACKAGES := \
     Torch
 
+# kexec utilities
+PRODUCT_PACKAGES := \
+    kexec \
+    kdump
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from d2vzw device
