@@ -1,0 +1,101 @@
+#!/usr/bin/env python
+#
+# Copyright (C) 2008 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+"""
+A shim to generate an OTA for kexec boot
+"""
+
+import sys
+
+if sys.hexversion < 0x02040000:
+  print >> sys.stderr, 'Python 2.4 or newer is required.'
+  sys.exit(1)
+
+import copy
+import imp
+import os
+
+RELEASETOOLS = os.path.realpath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..', 'build', 'tools', 'releasetools'))
+
+sys.path.append(RELEASETOOLS)
+imp.load_source('ota', os.path.join(RELEASETOOLS, 'ota_from_target_files'))
+
+import ota
+
+def CopyKexecFiles(input_zip, output_zip=None,
+                    substitute=None):
+  for info in input_zip.infolist():
+    if info.filename.startswith('KEXEC/'):
+      basefilename = 'kexec/' + info.filename[6:]
+      info2 = copy.copy(info)
+      fn = info2.filename = basefilename
+      if substitute and fn in substitute and substitute[fn] is None:
+        continue
+      if output_zip is not None:
+        if substitute and fn in substitute:
+          data = substitute[fn]
+        else:
+          data = input_zip.read(info.filename)
+        output_zip.writestr(info2, data)
+      if fn.endswith('/'):
+        ota.Item.Get(fn[:-1], dir=True)
+      else:
+        ota.Item.Get(fn, dir=False)
+
+def WriteFullOTAPackage(input_zip, output_zip):
+  # TODO: how to determine this?  We don't know what version it will
+  # be installed on top of.  For now, we expect the API just won't
+  # change very often.
+  script = ota.edify_generator.EdifyGenerator(3, ota.OPTIONS.info_dict)
+
+  metadata = { }
+
+  device_specific = ota.common.DeviceSpecificParams(
+      input_zip=input_zip,
+      input_version=ota.OPTIONS.info_dict['recovery_api_version'],
+      output_zip=output_zip,
+      script=script,
+      input_tmp=ota.OPTIONS.input_tmp,
+      metadata=metadata,
+      info_dict=ota.OPTIONS.info_dict)
+
+  device_specific.FullOTA_Assertions()
+
+  CopyKexecFiles(input_zip, output_zip)
+
+  # unpack our files
+  script.UnpackPackageDir('kexec', '/tmp')
+
+  # set permissions on files we need to execut
+  script.SetPermissions('/tmp/kexec', 0, 0, 0775);
+  script.SetPermissions('/tmp/kexec.sh', 0, 0, 0775);
+
+  # run the kexec shell to reboot
+  script.script.append('run_program("/tmp/kexec.sh");');
+
+  script.AddToZip(input_zip, output_zip)
+
+# overwrite some things
+ota.WriteFullOTAPackage = WriteFullOTAPackage
+
+if __name__ == '__main__':
+  try:
+    ota.main(sys.argv[1:])
+  except ota.common.ExternalError, e:
+    print
+    print '   ERROR: %s' % (e,)
+    print
+    sys.exit(1)
