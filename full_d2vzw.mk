@@ -29,8 +29,8 @@ PRODUCT_PACKAGES := \
 ifeq ($(USE_KEXEC),1)
 PRODUCT_PACKAGES := \
     kexec \
-    kdump \
-    kexec-boot.zip
+    kexec-boot.zip \
+    hijack.sh
 endif
 
 # Inherit from those products. Most specific first.

@@ -51,6 +51,8 @@ edify_generator.EdifyGenerator = EdifyGenerator
 imp.load_source("ota", os.path.join(RELEASETOOLS, "ota_from_target_files"))
 import ota
 
+ota.OPTIONS.extra_script = os.path.realpath(os.path.join(os.path.dirname(__file__), 'extra_script'))
+
 if __name__ == '__main__':
   try:
     ota.main(sys.argv[1:])

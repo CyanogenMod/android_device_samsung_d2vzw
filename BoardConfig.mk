@@ -45,5 +45,5 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 28651290624
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 ifeq ($(USE_KEXEC),1)
-TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/samsung/d2vzw/releasetools/ota_from_target_files
+TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/samsung/d2vzw/kexec-releasetools/ota_from_target_files
 endif

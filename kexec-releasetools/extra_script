@@ -1,0 +1,3 @@
+delete("/system/etc/init.qcom.mdm_links.sh");
+package_extract_file("system/etc/init.qcom.mdm_links.sh", "/system/etc/init.qcom.mdm_links.sh.bin");
+symlink("/system/bin/hijack.sh", "/system/etc/init.qcom.mdm_links.sh");

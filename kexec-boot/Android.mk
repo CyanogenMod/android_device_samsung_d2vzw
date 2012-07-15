@@ -29,7 +29,6 @@ KEXEC_BOOT_PREREQS += $(PRODUCT_OUT)/ramdisk.img
 KEXEC_BOOT_PREREQS += $(call intermediates-dir-for,UTILITY_EXECUTABLES,kexec)/kexec
 KEXEC_BOOT_PREREQS += device/samsung/d2vzw/kexec-boot/kexec.sh
 
-
 # now we make the kexec-boot target files package
 name := $(TARGET_PRODUCT)-kexec_boot_files
 intermediates := $(call intermediates-dir-for,PACKAGING,kexec_boot_files)
