@@ -10,7 +10,6 @@ if [ "$(getprop ro.bootmode)" == "kexec" ] ; then
 		"${0}.bin" $@
 	fi
 else
-	echo "we would totally be rebooting here"
 	# copy update package to /cache
 	cp /system/etc/kexec-boot.zip /cache
 
