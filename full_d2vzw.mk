@@ -21,8 +21,8 @@
 # lines, full and maguro, hence its name.
 #
  
-# Torch
 PRODUCT_PACKAGES := \
+    Stk \
     Torch
 
 # KEXEC-specific options
