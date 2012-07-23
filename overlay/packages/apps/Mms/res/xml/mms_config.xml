@@ -23,13 +23,13 @@
 <mms_config version="3">
 
     <!-- Maximum message size in bytes for a MMS message -->
-    <int name="maxMessageSize">614400</int>
+    <int name="maxMessageSize">307200</int>
 
     <!-- Maximum height for an attached image -->
-    <int name="maxImageHeight">1200</int>
+    <int name="maxImageHeight">480</int>
 
     <!-- Maximum width for an attached image -->
-    <int name="maxImageWidth">1600</int>
+    <int name="maxImageWidth">640</int>
 
     <!-- User-Agent parameter used in MMS http request -->
     <string name="userAgent">SAMSUNG-GT-I9100-Mms</string>
