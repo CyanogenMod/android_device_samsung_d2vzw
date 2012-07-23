@@ -74,16 +74,13 @@ persist.gps.qmienabled=true
 ro.telephony.ril_class=SamsungCDMAQualcommRIL
 ro.cdma.home.operator.numeric=310004
 ro.cdma.home.operator.alpha=Verizon
-gsm.sim.operator.alpha = Verizon
-gsm.sim.operator.numeric = 310004
-gsm.sim.operator.iso-country = us
-gsm.operator.alpha = Verizon
-gsm.operator.numeric = 310004
-gsm.operator.iso-country = us
+ro.ril.hsxpa=1
+ro.ril.gprsclass=10
 ro.telephony.default_network=4
 keyguard.no_require_sim=true
 DEVICE_PROVISIONED=1
 telephony.lteOnCdmaDevice=1
+ro.config.svlte1x=true
 
 
 # System property for SIM
