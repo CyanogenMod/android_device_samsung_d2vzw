@@ -25,7 +25,7 @@ cmdline="${cmdline} androidboot.mode=kexec"
 kexec \
 	--append="${cmdline}" \
 	--load-hardboot \
-	--mem-min=0xa0000000 \
+	--mem-min=0x98000000 \
 	--initrd=/tmp/ramdisk.img \
 	/tmp/kernel
 
