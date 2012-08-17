@@ -74,6 +74,7 @@ persist.gps.qmienabled=true
 ro.telephony.ril_class=SamsungCDMAQualcommRIL
 ro.cdma.home.operator.numeric=310004
 ro.cdma.home.operator.alpha=Verizon
+ro.cdma.subscribe_on_ruim_ready=true
 ro.ril.hsxpa=1
 ro.ril.gprsclass=10
 ro.telephony.default_network=8
