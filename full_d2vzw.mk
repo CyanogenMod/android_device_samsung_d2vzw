@@ -22,8 +22,7 @@
 #
  
 PRODUCT_PACKAGES := \
-    Stk \
-    Torch
+    Stk
 
 # KEXEC-specific options
 ifeq ($(USE_KEXEC),1)
