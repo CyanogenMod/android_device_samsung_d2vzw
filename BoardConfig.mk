@@ -30,7 +30,6 @@
 TARGET_OTA_ASSERT_DEVICE := d2vzw
 
 # Kernel
-TARGET_KERNEL_SOURCE        := kernel/samsung/d2
 TARGET_KERNEL_CONFIG        := cyanogen_d2vzw_defconfig
 
 ifeq ($(USE_KEXEC),1)
