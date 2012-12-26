@@ -8,12 +8,7 @@ rild.libargs=-d /dev/smd0
 ro.telephony.ril_class=SamsungCDMAQualcommRIL
 ro.cdma.home.operator.numeric=310004
 ro.cdma.home.operator.alpha=Verizon
-ro.cdma.subscribe_on_ruim_ready=true
 ro.telephony.default_network=8
-keyguard.no_require_sim=true
-DEVICE_PROVISIONED=1
 telephony.lteOnCdmaDevice=1
-ro.config.svlte1x=true
-persist.radio.no_wait_for_card=1
 
 
