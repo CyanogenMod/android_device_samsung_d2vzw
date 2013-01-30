@@ -29,6 +29,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from d2vzw device
 $(call inherit-product, device/samsung/d2vzw/device.mk)
 
+# VZW APN List
+PRODUCT_COPY_FILES += \
+    device/samsung/d2vzw/prebuilt/common/etc/apns-conf-vzw.xml:system/etc/apns-conf.xml
+
 # Set those variables here to overwrite the inherited values.
 PRODUCT_NAME := full_d2vzw
 PRODUCT_DEVICE := d2vzw
