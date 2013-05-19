@@ -3,9 +3,7 @@
 ## cannot take spaces
 rild.libargs=-d /dev/smd0
 
-# Fields for custom RIL
-# MAX PROP NAME is 31 chars --|
-ro.telephony.ril_class=SamsungCDMAQualcommRIL
+
 ro.cdma.home.operator.numeric=310004
 ro.cdma.home.operator.alpha=Verizon
 ro.telephony.default_network=8
