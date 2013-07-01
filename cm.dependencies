@@ -14,7 +14,7 @@
   {
     "repository": "android_kernel_samsung_d2",
     "target_path": "kernel/samsung/d2",
-    "branch": "refs/tags/cm-10.1.0.1"
+    "branch": "refs/tags/cm-10.1.0.2"
   }
 ]
 
