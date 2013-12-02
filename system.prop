@@ -17,3 +17,6 @@ ro.config.combined_signal=true
 ro.gsm.data_retry_config=max_retries=infinite,5000,5000,60000,120000,480000,900000
 DEVICE_PROVISIONED=1
 persist.eons.enabled=false
+
+# Set default cdma subscription to RUIM in database
+ro.telephony.default_cdma_sub=0
