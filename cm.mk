@@ -9,8 +9,8 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=d2vzw \
     TARGET_DEVICE=d2vzw \
-    BUILD_FINGERPRINT="Verizon/d2vzw/d2vzw:4.1.2/JZO54K/I535VRBMF1:user/release-keys" \
-    PRIVATE_BUILD_DESC="d2vzw-user 4.1.2 JZO54K I535VRBMF1 release-keys"
+    BUILD_FINGERPRINT="Verizon/d2vzw/d2vzw:4.3/JSS15J/I535VRUCML1:user/release-keys" \
+    PRIVATE_BUILD_DESC="d2vzw-user 4.3 JSS15J I535VRUCML1 release-keys"
 
 PRODUCT_GMS_CLIENTID_BASE := android-verizon
 
