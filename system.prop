@@ -9,6 +9,8 @@ ro.cdma.subscribe_on_ruim_ready=true
 ro.ril.svdo=true
 ro.telephony.default_network=10
 telephony.lteOnCdmaDevice=1
+telephony.sms.pseudo_multipart=0
+ril.subscription.types=NV,RUIM
 
 # Moar ril props
 persist.radio.snapshot_enabled=1
