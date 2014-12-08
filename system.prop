@@ -23,3 +23,6 @@ persist.eons.enabled=false
 
 # Set default cdma subscription to RUIM in database
 ro.telephony.default_cdma_sub=0
+
+# Use IMSI from SIM
+ro.telephony.get_imsi_from_sim=true
