@@ -5,7 +5,6 @@ rild.libargs=-d /dev/smd0
 
 ro.cdma.home.operator.numeric=311480
 ro.cdma.home.operator.alpha=Verizon
-ro.cdma.subscribe_on_ruim_ready=true
 ro.ril.svdo=true
 ro.telephony.default_network=10
 telephony.lteOnCdmaDevice=1
